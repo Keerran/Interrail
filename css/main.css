@@ -1,0 +1,178 @@
+* {
+    font-family: "Montserrat SemiBold";
+}
+@font-face {
+    font-family: HyliaSerif;
+    src: url("../fonts/HyliaSerifBeta-Regular.otf") format("opentype");
+}
+.unselectable, .unselectable * {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-user-drag: none;
+    user-drag: none;
+}
+body {
+    text-align: center;
+}
+#counter {
+    font-size: 3rem;
+    height: 1em;
+    margin: auto;
+}
+#reset {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 11;
+}
+#huw, #huw-img {
+    scale: 0.97;
+    transition: scale 0.05s;
+}
+#huw.hover, #huw-img.hover {
+    scale: 1;
+}
+#huw {
+    margin: auto;
+}
+.prompt {
+    position: absolute;
+    text-align: center;
+    display: none;
+    width: 500px;
+    z-index: 9;
+    background: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid black;
+}
+.prompt * {
+    display: inline-block;
+}
+
+.prompt > .title{
+    width: 100%;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    font-size: 2rem;
+    border-bottom: 1px solid black;
+    font-family: "Montserrat SemiBold" !important
+}
+
+.prompt > span.text {
+    padding: 10px 0;
+    width: 100%;
+}
+
+.prompt > button {
+    width: 100%;
+    height: 3rem;
+    font-size: 2rem;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    border-top: 1px solid black;
+}
+
+.prompt > button:hover {
+     color: #202129;
+     background-color: #e1e2e2;
+     outline: 0;
+}
+
+.prompt > button:active {
+     background-color: #d5d6d6;
+}
+
+#girl-msging-device img:hover+.tag{
+    display: unset;
+}
+
+#girl-msging-device img:hover {
+    scale: 1;
+}
+
+#girl-msging-device {
+    position: absolute;
+    top: 125px;
+    left: 450px;
+}
+
+#girl-msging-device img{
+    width: 189px;
+    scale: 0.98;
+}
+
+.tag {
+    position: absolute;
+    top: 50%;
+    right:-93px;
+    display: none;
+}
+
+.arrow_box {
+    position: relative;
+    background: black;
+    color: white;
+    border: 2px solid black;
+    border-radius: 5px;
+    width: 90px;
+    padding: 5px 0;
+}
+.arrow_box:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    margin-top: -8px;
+    left: -16px;
+    border: solid 8px transparent;
+    border-right-color: black;
+    z-index: 1;
+}
+
+#mask {
+    position: absolute;
+    background: transparent;
+    z-index: 1;
+    display: none;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+#health {
+    position: absolute;
+    top: 25px;
+    left: 468px;
+}
+
+.heart, .empty {
+    width: 50px;
+}
+
+#bois {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20%;
+    transform: translate(-50%, -50%);
+    z-index: 8;
+}
+
+#gonzo {
+    position: absolute;
+    font-size: 2em;
+    top: 20px;
+    left: 1150px;
+}
+
+#game-over {
+    font-family: HyliaSerif !important;
+    text-shadow: 0px 0px 50px rgba(255, 0, 0, 0.3);
+    z-index: 10;
+}
