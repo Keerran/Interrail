@@ -10,7 +10,7 @@ function showPrompt(text, type, after) {
     $("#mask").css("display", "unset");
     $("#" + type + "-prompt button").click(function () {
         $("#" + type + "-prompt").css("display", "");
-        $("#counter").text(localStorage.currency + localStorage.clicks);
+        $("#counter").text(currency + localStorage.clicks);
         $("#mask").css("display", "");
         if(!after())
         {
