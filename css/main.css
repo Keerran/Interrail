@@ -99,7 +99,7 @@ body {
 #girl-msging-device {
     position: absolute;
     top: 125px;
-    left: 450px;
+    left: calc(50% - 510px);
 }
 
 #girl-msging-device img{
@@ -148,7 +148,7 @@ body {
 #health {
     position: absolute;
     top: 25px;
-    left: 468px;
+    left: calc(50% - 492px);
 }
 
 .heart, .empty {
