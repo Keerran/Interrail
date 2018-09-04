@@ -20,6 +20,17 @@ function showPrompt(text, type, after) {
     })
 }
 
+function drawBoys() {
+    $("#boys *").remove()
+    var i;
+    var boys = ["Kiwi", "Shano", "Greece", "Badeli", "Sackett", "Jonesy", "Rob"];
+    var money = localStorage.boys.split(";");
+    for(i = 0; i < 7; i++)
+    {
+        $("#boys").append("<div class=\"boy\">"+boys[i]+": <span class='money'>€"+money[i]+"</span></div>")
+    }
+}
+
 function spawnBigT()
 {
     if(!bigT)
@@ -86,7 +97,6 @@ function checkEvents() {
         $("body").append(el)
         return;
     }
-    console.log(localStorage.stage);
     if(localStorage.clicks >= 130 && localStorage.stage === "0")
     {
         $("#choice-prompt").css("display", "unset");
@@ -130,7 +140,6 @@ function checkEvents() {
         localStorage.clicks = "0.00"
     }
     else if (localStorage.clicks >= 250 && localStorage.stage === "1") {
-        console.log(localStorage.clicks);
         showPrompt("Turns out that your travel card had pounds on it instead of euros, " +
             "which obviously means you can't use it and you've lost all that money.<br>" +
             "Looks like your going to have to be a stingy bastard for the rest of the trip.", "bad");
@@ -188,11 +197,41 @@ $(document).ready(function () {
     if (!localStorage.health) {
         localStorage.health = 3;
     }
+    if(!localStorage.boys) {
+        localStorage.boys = "50;50;50;50;50;50;50"
+    }
+    drawBoys()
     $("#gonzo span").text(localStorage.gonzo);
     checkEvents();
     drawHearts()
     $("#counter").text(currency + localStorage.clicks);
     $("#huw").click(function (e) {
+        let boys = localStorage.boys.split(";");
+        while(localStorage.boys != "0;0;0;0;0;0;0") {
+            let i = Math.floor(Math.random() * 7);
+            if(boys[i] == 0)
+            {
+                continue;
+            }
+            boys[i] = (boys[i] - 0.01 * localStorage.gonzo).toFixed(2)
+            if (boys[i] <= 0) {
+                boys[i] = "0"
+            }
+            break;
+        }
+        localStorage.boys = boys.join(";");
+        if(localStorage.boys == "0;0;0;0;0;0;0")
+        {
+            localStorage.win = true;
+            showPrompt("Good job, you won! You fucked over all the boys. What a great holiday!", "good", function() {
+                let el = $("<div id=\"win\"><img src='img/tfwwin.png'><span>YOU WIN</span></div>");
+                $("body").append(el);
+                el.animate(
+                    {"opacity": 1}, 2000
+                );
+            });
+        }
+        drawBoys()
         localStorage.clicks = (Number(localStorage.clicks) + 0.01 * localStorage.gonzo).toFixed(2);
         $("#counter").text(currency + localStorage.clicks);
         checkEvents();
@@ -213,10 +252,12 @@ $(document).ready(function () {
         localStorage.stage = "0"
         localStorage.removeItem("lastClicked");
         localStorage.health = "3"
-        localStorage.gonzo = 1
+        localStorage.gonzo = 1000
+        localStorage.boys = "50;50;50;50;50;50;50"
         currency = "£"
         $("#counter").text(currency + localStorage.clicks);
         $("#health .heart, #health .empty").remove();
+        drawBoys();
         drawHearts()
     }).dblclick(function () {
         localStorage.removeItem("gameOver");
@@ -225,9 +266,11 @@ $(document).ready(function () {
         localStorage.removeItem("lastClicked");
         localStorage.health = "3"
         localStorage.gonzo = 1
+        localStorage.boys = "50;50;50;50;50;50;50"
         currency = "£"
         $("#counter").text(currency + localStorage.clicks);
         $("#health .heart, #health .empty").remove();
+        drawBoys();
         drawHearts();
     });
     $("#girl-msging-device img").click(function () {
