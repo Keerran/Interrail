@@ -252,7 +252,7 @@ $(document).ready(function () {
         localStorage.stage = "0"
         localStorage.removeItem("lastClicked");
         localStorage.health = "3"
-        localStorage.gonzo = 1000
+        localStorage.gonzo = 1
         localStorage.boys = "50;50;50;50;50;50;50"
         currency = "£"
         $("#counter").text(currency + localStorage.clicks);
