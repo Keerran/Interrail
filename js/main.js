@@ -237,14 +237,14 @@ $(document).ready(function () {
         checkEvents();
         e.preventDefault();
     }).mousedown(function () {
-        $("#huw, #huw-img").css("scale", "0.955");
+        $("#huw, #huw-img").css("transform", "scale(0.955)");
     })
         .mouseup(function () {
-            $("#huw, #huw-img").css("scale", "");
+            $("#huw, #huw-img").css("transform", "");
         }).hover(function () {
         $("#huw, #huw-img").addClass("hover")
     }, function () {
-        $("#huw, #huw-img").css("scale", "").removeClass("hover");
+        $("#huw, #huw-img").css("transform", "").removeClass("hover");
     });
     $("#reset").click(function () {
         localStorage.removeItem("gameOver");
@@ -289,9 +289,9 @@ $(document).ready(function () {
         showPrompt("Big T gives you money. Oh looks like its enough for a lazy handjob. Not enough to buy any rounds though.", "good");
         localStorage.clicks = (Number(localStorage.clicks) + 100).toFixed(2);
     }).mousedown(function () {
-        $(this).css("scale", "0.955");
+        $(this).css("transform", "scale(0.955)");
     }).mouseup(function () {
-        $(this).css("scale", "");
+        $(this).css("transform", "");
     });
     window.setInterval(update, 1000);
 });
