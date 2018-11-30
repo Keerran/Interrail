@@ -29,12 +29,12 @@ body {
 }
 #huw, #huw-img {
     scale: 0.97;
-    transition: scale(0.97)
+    transform: scale(0.97)
     transition: scale 0.05s;
 }
 #huw.hover, #huw-img.hover {
     scale: 1;
-    transition: scale(1);
+    transform: scale(1);
 }
 #huw {
     margin: auto;
@@ -96,7 +96,7 @@ body {
 
 #girl-msging-device img:hover {
     scale: 1;
-    transition: scale(1);
+    transform: scale(1);
 }
 
 #girl-msging-device {
@@ -108,7 +108,7 @@ body {
 #girl-msging-device img{
     width: 189px;
     scale: 0.98;
-    transition: scale(0.98);
+    transform: scale(0.98);
 }
 
 .tag {
