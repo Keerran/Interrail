@@ -29,7 +29,7 @@ body {
 }
 #huw, #huw-img {
     scale: 0.97;
-    transform: scale(0.97)
+    transform: scale(0.97);
     transition: scale 0.05s;
 }
 #huw.hover, #huw-img.hover {
