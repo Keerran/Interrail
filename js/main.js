@@ -23,7 +23,7 @@ function showPrompt(text, type, after) {
 function drawBoys() {
     $("#boys *").remove()
     var i;
-    var boys = ["Kiwi", "Shano", "Greece", "Badeli", "Sackett", "Jonesy", "Rob"];
+    var boys = ["Kiwi   ", "Shano  ", "Greece ", "Badeli ", "Sackett", "Jonesy ", "Rob    "];
     var money = localStorage.boys.split(";");
     for(i = 0; i < 7; i++)
     {
