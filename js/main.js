@@ -213,6 +213,7 @@ $(document).ready(function () {
             {
                 continue;
             }
+            var conversion = currency == "£" ? 1.13 : 1
             boys[i] = (boys[i] - 0.01 * localStorage.gonzo).toFixed(2)
             if (boys[i] <= 0) {
                 boys[i] = "0"
